@@ -12,7 +12,7 @@ Also add a dependency to `spring-cloud-starter-stream-rabbit`:
 </dependency>
 ```
 
-In the class where you want to consume the messages, decorate the class with @EnableBinding and use the built-in Sink interface. Next create a method to process any mesages found in the broker. To achieve that, decorate the method with @StreamListener and all the content type handling is done for us. In this case, the received messaged is persisted in Fhir server.
+In the class where you want to consume the messages, decorate the class with `@EnableBinding` and use the built-in Sink interface. Next create a method to process any mesages found in the broker. To achieve that, decorate the method with `@StreamListener` and all the content type handling is done for us. In this case, the received messaged is persisted in Fhir server.
 ```yml
 @StreamListener(Sink.INPUT)
 public void processVote(AuditEvent auditEvent) {
